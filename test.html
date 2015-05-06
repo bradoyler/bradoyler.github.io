@@ -48,11 +48,21 @@
   <h2>loren ipsom</h2>
   <script>
   
-  $(function(){
-    var winHeight = $(window).height();
-    var docHeight = $(document).height();
-    $('.test').html('# '+ winHeight + " - "+ docHeight);
-  });
+$(function(){
+  var winHeight = $(window).height();
+  var docHeight = $(document).height();
+  
+  function showHeights() {
+    var out = '# '+ winHeight + " - "+ docHeight;
+    $('.test').html(out);
+    console.log(out);
+  }
+  
+  showHeights();
+  
+  $(window).scroll(showHeights);
+
+});
   
   </script>
 </body>
