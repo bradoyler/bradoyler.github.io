@@ -1,69 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
-  <meta charset="utf-8">
-  <title>JS Bin</title>
+  <style>
+  .output {
+    position: fixed;
+    bottom:0;
+    background: #fff;
+    padding: 5px;
+    width:100%;
+  }
+  </style>
+  <title>jQuery browser tests</title>
 </head>
 <body>
-  <h1>test headline</h1>
-  <div class="test"></div>
-<h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <h2>loren ipsom</h2>
-  <script>
+  <h1>start</h1>
+  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2> <h2>some lorem ipsum</h2>  <h2>some lorem ipsum</h2>
+  <h3>the end</h3>
   
+<div class="output">
+    <div>Window: <span class="row1"></span></div>
+    <div>Document: <span class="row2"></span></div>
+</div> 
+
+<script>
 $(function(){
   
   function showHeights() {
-    var winHeight = $(window).height();
-    var docHeight = $(document).height();
-    var out = '# '+ winHeight + " - "+ docHeight;
-    
-    $('.test').html(out);
-    console.log(out);
+    var win = $(window);
+    var doc = $(document);
+    $('.row1').html(win.width() +" x "+ win.height());
+    $('.row2').html(doc.width() +" x "+ doc.height());
   }
   
   showHeights();
@@ -71,7 +40,6 @@ $(function(){
   $(window).scroll(showHeights);
 
 });
-  
-  </script>
+</script>
 </body>
 </html>
