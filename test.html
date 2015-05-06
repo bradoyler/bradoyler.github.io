@@ -31,8 +31,8 @@ $(function(){
   function showHeights() {
     var win = $(window);
     var doc = $(document);
-    $('.row1').html(win.width() +" x "+ win.height());
-    $('.row2').html(doc.width() +" x "+ doc.height());
+    $('.row1').html(win.width() +" x "+ win.height() +" t:"+ win.scrollTop());
+    $('.row2').html(doc.width() +" x "+ doc.height() +" t:"+ doc.scrollTop());
   }
   
   showHeights();
