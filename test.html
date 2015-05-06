@@ -71,9 +71,14 @@ $(function(){
   
   //$(window).scroll(showHeights);
   
-  $(document).on('rAF-scroll', function () {
-    showHeights();
-  });
+ // $(document).on('rAF-scroll', function () {
+ //    showHeights();
+ // });
+ 
+ $('window').on('touchmove', function(event) {
+   showHeights();
+ });
+ 
 });
 
 </script>
