@@ -26,20 +26,56 @@
 </div> 
 
 <script>
+var main = main || {};
+// Detect request animation frame
+main.rAF = window.requestAnimationFrame ||
+window.webkitRequestAnimationFrame ||
+window.mozRequestAnimationFrame ||
+window.msRequestAnimationFrame ||
+window.oRequestAnimationFrame ||
+  // IE Fallback, you can even fallback to onscroll
+function(callback){ window.setTimeout(callback, 1000/60); };
+
+main.scollPos = -1;
+
+main.handleScroll = function(){
+  // Avoid executing when position hasn't changed
+  if (main.scollPos === window.pageYOffset) {
+    main.rAF.call(window, main.handleScroll);
+    return false;
+  }
+  else {
+    main.scollPos = window.pageYOffset;
+  }
+  //trigger rAF-scroll event & recurse
+  $(document).trigger('rAF-scroll');
+  main.rAF.call(window, main.handleScroll);
+};
+
+
+
 $(function(){
+  
+  main.handleScroll();
   
   function showHeights() {
     var win = $(window);
     var doc = $(document);
-    $('.row1').html(win.width() +" x "+ win.height() +" t:"+ win.scrollTop());
-    $('.row2').html(doc.width() +" x "+ doc.height() +" t:"+ doc.scrollTop());
+    $('.row1').html(win.width() +" x "+ 
+                    win.height() +" t: "+ Math.floor(win.scrollTop()));
+    $('.row2').html(doc.width() +" x "+ 
+                    doc.height() +" t: "+ Math.floor(doc.scrollTop()));
   }
   
   showHeights();
   
-  $(window).scroll(showHeights);
-
+  //$(window).scroll(showHeights);
+  
+  $(document).on('rAF-scroll', function () {
+    showHeights();
+  });
 });
+
 </script>
 </body>
 </html>
