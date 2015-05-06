@@ -13,7 +13,7 @@
     width:100%;
   }
   </style>
-  <title>jQuery browser tests</title>
+  <title>Scroll test for cross browser support</title>
 </head>
 <body>
   <h1>start</h1>
@@ -69,12 +69,15 @@ $(function(){
   
   showHeights();
   
-  //$(window).scroll(showHeights);
-  
- // $(document).on('rAF-scroll', function () {
- //    showHeights();
- // });
+ // simple, less performant scroll event  
+ //$(window).scroll(showHeights);
  
+ // scroll event using rAF
+ $(document).on('rAF-scroll', function () {
+     showHeights();
+ });
+ 
+ // allows execution while scrolling
  $(window).on('touchmove', function() {
    showHeights();
  });
