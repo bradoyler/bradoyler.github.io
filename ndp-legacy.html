@@ -1,0 +1,226 @@
+<!doctype html><!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7 no-js" lang="en"><![endif]--><!--[if IE 7]><html class="lt-ie9 lt-ie8 no-js" lang="en"><![endif]--><!--[if IE 8]><html class="lt-ie9 no-js" lang="en"><![endif]--><!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>NDP Legacy test w/ Events </title>
+</head>
+<body id="top" class="article article" data-routename="article" data-taxonomy="article">
+<div id="player"></div>
+<h2 id="player_play">PLAY ></h2>
+
+<script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script>
+    window.analyticsDataLayer = {};
+    window.$ndp = {};
+
+   $ndp.configuration = {
+  // freewheel: {
+  //     network: 171224,
+  //     url: "http://29cd8.v.fwmrm.net/ad/g/1"
+  // },
+  siteData: {
+    siteSection: 'nbcnews_article',
+    sect: analyticsDataLayer.channelSection,
+    topic: 'sports',
+    feature: '',
+    show: '',
+    storyline : '',
+    // kuid: kruxConfig.kxkuid,
+    //kxsegs: kruxConfig.kxsegs
+  },
+  pdk: {
+     source: {version: '5.5.6', url: 'http://media1.s-nbcnews.com/i/videoassets/pdk/5.5.6/'},
+     skin: {version: 'NBCNews 1.0.0', url: 'http://www.nbcnews.com/id/52493270?nbcnews.json'},
+     layout: {version: 'Today 1.0.2', url: 'http://media1.s-nbcnews.com/i/videoassets/ndp/1.0.2/pdkTodayData/metaLayout_controlRack.xml'}
+  }
+};
+
+window.playerInstances = [{
+        videoObj: {
+            type: "",
+            widget_type: "",
+            videoType: "Original",
+            mpxId: "447726659600",
+            guid: "a_30stk_bird_flu_150519",
+            pubDate: "2015-06-03 12:39:00 Z",
+            expirationDate: "2112-11-21 12:39:00 Z",
+            playbackIsDisabled: false,
+            availabilityState: "available",
+            title: "Can You Catch Bird Flu?",
+            description: "U.S. poultry has been devastated by an avian influenza outbreak. But are humans at risk too?",
+            thumbnail: "http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/a_30stk_bird_flu_150519.jpg",
+            source: "NBCNews.com",
+            sourceId: null,
+            canonicalUrl: "http://www.nbcnews.com/watch/nbcnews-com/can-you-catch-bird-flu-447726659600",
+            shortUrl: "http://nbcnews.to/1K9mI0l",
+            associatedPlaylistUrl: "http://feed.theplatform.com/f/2E2eJC/dev_53296819",
+            fallbackPlaylistUrl: null,
+            topVideosPlaylistUrl: "http://feed.theplatform.com/f/2E2eJC/nnd_20381145",
+            mezzVersion: "1",
+            embedUrl: "http://player.theplatform.com/p/2E2eJC/nbcNewsOffsite?guid=a_30stk_bird_flu_150519",
+            videoAssets: [{
+                format: "ISM",
+                assetType: "Smooth_1",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/Xi8ex8psoVf9",
+                width: "1464",
+                height: "824",
+                bitRate: "3763968",
+                privateUrl: null,
+                duration: "42.266"
+            }, {
+                format: "MPEG4",
+                assetType: "OnceURL",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/GTXXqOpwG5uj",
+                width: "0",
+                height: "0",
+                bitRate: "0",
+                privateUrl: null,
+                duration: "42"
+            }, {
+                format: "MPEG4",
+                assetType: "Limelight MP4",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/GMpxz3m6u7Q7",
+                width: "420",
+                height: "240",
+                bitRate: "500000",
+                privateUrl: null,
+                duration: "42"
+            }, {
+                format: "MPEG4",
+                assetType: "Limelight MP4",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/z_elUc3ySLYo",
+                width: "640",
+                height: "360",
+                bitRate: "800000",
+                privateUrl: null,
+                duration: "42"
+            }, {
+                format: "MPEG4",
+                assetType: "FireTV-Once",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/CCigZo_ppHwm",
+                width: "0",
+                height: "0",
+                bitRate: "0",
+                privateUrl: null,
+                duration: "42"
+            }],
+            nativeVideo: false,
+            defaultAssociation: "NBC News/Feature/30 Seconds to Know",
+            duration: 42,
+            hasCaption: false
+        },
+        config: {
+            id: 10000,
+            autoPlay: false,
+            location: document.getElementById('player0')
+        }
+    }, {
+        videoObj: {
+            type: "",
+            widget_type: "",
+            videoType: "Original",
+            mpxId: "367689795707",
+            guid: "a_30stk_solar_panel_141231",
+            pubDate: "2015-04-21 19:23:00 Z",
+            expirationDate: "2112-10-09 19:23:00 Z",
+            playbackIsDisabled: false,
+            availabilityState: "available",
+            title: "How Do Solar Panels Work?",
+            description: "A photovoltaic cell is the technology that's used to convert the sun's energy into electrical power.",
+            thumbnail: "http://media2.s-nbcnews.com/i/MSNBC/Components/Video/__NEW/a_30stk_solar_panel_141331.jpg",
+            source: "NBCNews.com",
+            sourceId: null,
+            canonicalUrl: "http://www.nbcnews.com/watch/nbcnews-com/how-do-solar-panels-work-367689795707",
+            shortUrl: "http://nbcnews.to/1QgeBRZ",
+            associatedPlaylistUrl: "http://feed.theplatform.com/f/2E2eJC/nnd_53296819",
+            fallbackPlaylistUrl: null,
+            topVideosPlaylistUrl: "http://feed.theplatform.com/f/2E2eJC/nnd_20381145",
+            mezzVersion: "2",
+            embedUrl: "http://player.theplatform.com/p/2E2eJC/nbcNewsOffsite?guid=a_30stk_solar_panel_141231",
+            videoAssets: [{
+                format: "ISM",
+                assetType: "Smooth_1",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/Lz_sNyySrbpe",
+                width: "1464",
+                height: "824",
+                bitRate: "3764000",
+                privateUrl: null,
+                duration: "43.033"
+            }, {
+                format: "MPEG4",
+                assetType: "OnceURL",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/FCAoKr5GBzG_",
+                width: "0",
+                height: "0",
+                bitRate: "0",
+                privateUrl: null,
+                duration: "43"
+            }, {
+                format: "MPEG4",
+                assetType: "Limelight MP4",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/DtlrgFkbM6WT",
+                width: "420",
+                height: "240",
+                bitRate: "500000",
+                privateUrl: null,
+                duration: "43"
+            }, {
+                format: "MPEG4",
+                assetType: "Limelight MP4",
+                publicUrl: "http://link.theplatform.com/s/2E2eJC/59D170pklG_s",
+                width: "640",
+                height: "360",
+                bitRate: "800000",
+                privateUrl: null,
+                duration: "43"
+            }],
+            nativeVideo: false,
+            defaultAssociation: "NBC News/Feature/30 Seconds to Know",
+            duration: 43,
+            hasCaption: false
+        },
+        config: {
+            id: 10002,
+            autoPlay: false,
+            location: document.getElementById('player1')
+        }
+    }];
+</script>
+
+<script src="http://media1.s-nbcnews.com/i/videoassets/staging/ndp/ndpplayer-legacy.js"></script>
+
+<script>
+  $(function () {
+
+     var MPXMediaAsset = $ndp.MPXMediaAsset;
+     var PlaybackEvent = $ndp.events.PlaybackEvent;
+     var AdEvent = $ndp.events.AdEvent;
+     
+     var config = {
+            id: 10002,
+            autoPlay: false,
+            location: document.getElementById('player')
+        };
+     
+     window.player = new NDPPlayer(config);
+     var videoMetaData = new MPXMediaAsset(playerInstances[0].videoObj);
+     player.mediaAsset(videoMetaData);
+     
+     player.on(AdEvent.START, function () {
+        alert('AdEvent.START');
+     });
+     
+     player.on(PlaybackEvent.START, function () {
+        alert('PlaybackEvent.START');
+     });
+     
+
+     $('#player_play').on('click', function () {
+         player.play();
+     });
+ });
+</script>
+
+</body>
+</html>
