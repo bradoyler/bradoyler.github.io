@@ -6,12 +6,11 @@
   <title>NDP Legacy test w/ Events </title>
 </head>
 <body id="top" class="article article" data-routename="article" data-taxonomy="article">
-<div id="player"></div>
+<div id="playerframe"></div>
 <h2 id="player_play">PLAY ></h2>
 
 <script src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
 <script>
-    window.analyticsDataLayer = {};
     window.$ndp = {};
 
    $ndp.configuration = {
@@ -21,7 +20,7 @@
   // },
   siteData: {
     siteSection: 'nbcnews_article',
-    sect: analyticsDataLayer.channelSection,
+    sect: 'news',
     topic: 'sports',
     feature: '',
     show: '',
@@ -179,11 +178,6 @@ window.playerInstances = [{
             defaultAssociation: "NBC News/Feature/30 Seconds to Know",
             duration: 43,
             hasCaption: false
-        },
-        config: {
-            id: 10002,
-            autoPlay: false,
-            location: document.getElementById('player1')
         }
     }];
 </script>
@@ -200,7 +194,7 @@ window.playerInstances = [{
      var config = {
             id: 10002,
             autoPlay: false,
-            location: document.getElementById('player')
+            location: document.getElementById('playerframe')
         };
      
      window.player = new NDPPlayer(config);
