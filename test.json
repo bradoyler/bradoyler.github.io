@@ -1,0 +1,6 @@
+{
+  "bool": true,
+  "test": "yep",
+  "number": 55,
+  "myarray": [1, true, 'test']
+}
