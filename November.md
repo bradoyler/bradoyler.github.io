@@ -1,10 +1,10 @@
 ## Calendar test
+
 <div>
-  <header>
-    <button><a href="/October.md">« October</a></button>
-    <h2>November 2015</h2>
-    <button><a href="/December.md">December »</a></button>
-  </header>
+<a href="/October.md">« October</a> 
+<a href="/December.md">» December</a>
+</div>
+<h2>November 2015</h2>
 <table>
   <tr>
     <td>S</td>
@@ -27,13 +27,11 @@
   <tr>
     <td>6</td>
     <td>7</td>
-    <td> 
-      <b>8</b>
-      <pre> 
-      Brad O (V)
-      Jonh N (V)
-      </pre>
-    </td>
+    <td><div>
+      <b>8</b> <br>
+       Brad O (V) <br>
+       Bill B (P) <br>
+    </div></td>
     <td>9</td>
     <td>10</td>
     <td>11</td>
