@@ -1,9 +1,9 @@
 ## Calendar test
 <div>
   <header>
-    <button><a href="/October.md">«</a></button>
+    <button><a href="/October.md">« October</a></button>
     <h2>November 2015</h2>
-    <button><a href="/December.md">»</a></button>
+    <button><a href="/December.md">December »</a></button>
   </header>
 <table>
   <tr>
@@ -29,8 +29,8 @@
     <td>7</td>
     <td> 
       <b>8</b>
-      <div>Brad O (V)</div>
-      <div>Jonh N (V)</div>
+      <pre> Brad O (V)
+            Jonh N (V)</pre>
     </td>
     <td>9</td>
     <td>10</td>
