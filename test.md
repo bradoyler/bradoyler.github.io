@@ -1,14 +1,4 @@
-### test
-
-### html
-
-<table>
-<tr>
-<td>test</td>
-</tr>
-</table>
-
-### test 2
+## Calendar test
 <div>
   <header>
     <button>«</button>
@@ -51,7 +41,7 @@
     <td>14</td>
     <td>15</td>
     <td>16</td>
-    <td class="selected">17</td>
+    <td>17</td>
     <td>18</td>
     <td>19</td>
   </tr>
