@@ -27,7 +27,8 @@
   <tr>
     <td>6</td>
     <td>7</td>
-    <td> <b> 8</b>
+    <td> 
+      <b>8</b>
       <div>Brad O (V)</div>
       <div>Jonh N (V)</div>
     </td>
