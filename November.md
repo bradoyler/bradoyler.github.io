@@ -29,8 +29,10 @@
     <td>7</td>
     <td> 
       <b>8</b>
-      <pre> Brad O (V)
-            Jonh N (V)</pre>
+      <pre> 
+      Brad O (V)
+      Jonh N (V)
+      </pre>
     </td>
     <td>9</td>
     <td>10</td>
