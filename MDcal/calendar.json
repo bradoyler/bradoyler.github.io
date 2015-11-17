@@ -1,11 +1,11 @@
 {
-  2015: { 
-    November: [{d1:'w'}, d31:'th'],
-    December: [{d1:'t'}, d31:'f'],
+  "2015": { 
+    "November": [{d1:'w'}, d31:'th'],
+    "December": [{d1:'t'}, d31:'f'],
   },
-  2016: {
-     January: [{d1:'w'}, d31:'th'],
-     February: [{d1:'t'}, d31:'f'],
-     March: [{d1:'t'}, d31:'f'],
+  "2016": {
+     "January": [{d1:'w'}, d31:'th'],
+     "February": [{d1:'t'}, d31:'f'],
+     "March": [{d1:'t'}, d31:'f'],
   }
 }
