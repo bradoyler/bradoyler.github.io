@@ -1,4 +1,4 @@
  people: {
-  Brad-O: ['2015.November.22', '2015.November.27','2015.December.22'],
+  "Brad-O": ["2015.November.22", '2015.November.27','2015.December.22'],
   Bill-B: ['2015.November.22', '2015.November.27','2015.December.22'],
  }
