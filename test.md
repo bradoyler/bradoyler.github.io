@@ -37,7 +37,9 @@
   <tr>
     <td>6</td>
     <td>7</td>
-    <td>8</td>
+    <td>8
+      <div>Brad O (V)
+    </td>
     <td>9</td>
     <td>10</td>
     <td>11</td>
