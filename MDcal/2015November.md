@@ -2,9 +2,9 @@
 
 <h2>2015</h2>
 <div>
-<a href="/2015October.md">« October</a> 
+<a href="/MDcal/2015October.md">« October</a> 
 <span> November </span> 
-<a href="/2015December.md"> December »</a>
+<a href="MDcal/2015December.md"> December »</a>
 </div>
 <table>
   <tr>
