@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Marquee test</title>
@@ -10,20 +9,19 @@
 <iframe id="e2016_marquee" src="http://nbcprimaries.herokuapp.com/widget/elections_marquee" frameborder="0" width="100%" scrolling="no" height="120"></iframe>
   <hr>
   <div>*Outstanding issues:</div>
-  <div>1) variable height issues at different screen width.</div>
-  <div>2) links dont work properly, as we need to set target=parent</div>
-  <div>3) some styles are not loaded, for tabbed UI</div>
+  <div> 1) links dont work properly, as we need to set target=parent</div>
+  <div> 2) some styles are not loaded, for tabbed UI</div>
   
   <script>
-    window.addEventListener('message', function(e) {
-    var $iframe = $("#e2016_marquee");
+  window.addEventListener('message', function(e) {
+    var $iframe = document.getElementById('e2016_marquee');
     var eventName = e.data[0];
     var data = e.data[1];
     if(eventName==='setHeight') {
-      console.log('###',data);
-      $iframe.height(data);
+      console.log('### height', data);
+      $iframe.style.height = data + 'px';
     }
-   }, false);
+  }, false);
   </script>
 </body>
 </html>
