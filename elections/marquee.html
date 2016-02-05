@@ -8,20 +8,14 @@
 <body style='background-color:#eee'>
 <h1>Some other Header</h1>
 <iframe id="e2016_marquee" src="http://nbcprimaries.herokuapp.com/widget/elections_marquee" frameborder="0" width="100%" scrolling="no" height="120"></iframe>
-  <hr>
-  <div>*Outstanding issues:</div>
-  <div> 1) links dont work properly, as we need to set target=parent</div>
-  
-  <script>
+<script>
   window.addEventListener('message', function(e) {
-    var $iframe = document.getElementById('e2016_marquee');
-    var eventName = e.data[0];
-    var data = e.data[1];
-    if(eventName==='setHeight') {
-      console.log('### height', data);
-      $iframe.style.height = data + 'px';
+    if(e.data[0]==='setHeight') {
+      document.getElementById('e2016_marquee').style.height = e.data[1] + 'px';
     }
   }, false);
-  </script>
+</script>
+  <hr>
+  <div>*Known issues:</div>
 </body>
 </html>
