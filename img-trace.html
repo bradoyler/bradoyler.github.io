@@ -38,6 +38,10 @@
             border-radius: 5px;
         }
 
+        #svgdiv {
+            width: 230px;
+        }
+
         #drop {
             border: 2px dashed #ccc;
             width: 170px;
@@ -106,7 +110,7 @@
             Potrace.loadImageFromUrl("brad.jpg");
             Potrace.process(function(){
                 displayImg();
-                displaySVG(3);
+                displaySVG(.5);
             });
         }, false);
 
@@ -163,7 +167,7 @@
     function displaySVG(size, type){
         var svgdiv = document.getElementById('svgdiv');
         svgdiv.style.display = 'inline-block';
-        svgdiv.innerHTML = "<p>Result:</p>" + Potrace.getSVG(size, type);
+        svgdiv.innerHTML = "<p>SVG:</p>" + Potrace.getSVG(size, type);
     }
 
 </script>
