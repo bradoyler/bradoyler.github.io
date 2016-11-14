@@ -21,10 +21,9 @@
     var ajaxOptions = {
       url:'http://s3.amazonaws.com/cdn.newsblock.io/newsmachine/manifest.json',
       success: function (data) {
-        data.images.forEach(function(imgUrl){
-          $('#images').append('<img src="'+ baseUrl + imgUrl +'" />');
+        data.pages.forEach(function(page){
+          $('#images').append('<img src="'+ baseUrl + page.image +'" />');
         });
-            //console.log(data)
       },
       error: function (resp, err, msg) {
         console.log('err:', err);
