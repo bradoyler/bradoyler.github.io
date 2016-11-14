@@ -7,7 +7,7 @@
  <meta name="viewport" content="width=device-width">
  <meta name="description" content="Snapshot of all major news sites">
  <meta property="og:image" content=""/>
- <title>News Machine (wayback)</title>
+ <title>News Machine (wayback 0.2)</title>
 </head>
 <body>
   <div class='container' id='images'></div>
@@ -22,7 +22,7 @@
       url:'http://s3.amazonaws.com/cdn.newsblock.io/newsmachine/manifest.json',
       success: function (data) {
         data.pages.forEach(function(page){
-          $('#images').append('<img src="'+ baseUrl + page.image +'" />');
+          $('#images').append('<a href="'+page.url+'" target="blank"><img src="'+ baseUrl + page.image +'" /></a>');
         });
       },
       error: function (resp, err, msg) {
