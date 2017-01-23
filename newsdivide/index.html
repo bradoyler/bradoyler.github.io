@@ -77,6 +77,7 @@
   yesterdayDate.setDate(todayDate.getDate() - 1);
   var yesterdayDD = yesterdayDate.getFullYear() +'-'+ yesterdayDate.getMonth()+1 +'-'+ yesterdayDate.getDate();
   $('#yesterday').attr('href','?archive='+ yesterdayDD);
+  $('#yesterday').html(yesterdayDate.toDateString());
   
   //-----
   var baseUrl = 'http://s3.amazonaws.com/cdn.newsblock.io/newsmachine/'+ archiveDate +'/';
