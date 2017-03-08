@@ -1,136 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta charset="utf-8">
-    <title>Jargon Generator </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jargon Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <script type="text/javascript">
-    </script>
     <div class="container">
-      <div class="hero">
-        <h1>Jargon Generator</h1>
-        <hr>
+      <h2>Jargon Generator</h2>
+      <input class="btn btn-primary" onclick='javascript:init()' type="button" value="Re-Generate Jargon!" name="button"></input>
+      <hr>
+      <p class="lead" id="sentence">[placeholder jargon text]</p>
+      <hr>
+      <div class="">
+        <form class="" action="index.html" method="post">
+                    <textarea class='form-control' id='jargonText' name="name" rows="20" placeholder="enter your jargon dictionary here...">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+          Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+          Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+          Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
+          Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+          Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                    </textarea>
+        </form>
       </div>
-      <h5 id="sentence">[placeholder jargon text]</h5>
-        <!-- <input type="text" name="" placeholder="Refine..." value=""> -->
-        <input class="btn btn-primary" onclick='javascript:init()' type="button" value="Re-Generate Jargon!" name="button"></input>
-        <hr>
-        <div class="hero">
-          <textarea id='jargonText' name="name" rows="20" placeholder="enter your jargon dictionary here..."
-          cols="80">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
-Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
-Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
-Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
-          </textarea>
-        </div>
-    </div>
 
-    <script type="text/javascript">
-    const maxCleanWordsArg = 4;
-    const commaChanceArg = 5;
-    const wordsExpression = /([\w]+\s[\u2014\-]\s)|([\w]+[\s,.?!&]+)|(\w+\-\w+[\s,.?!&]+)|(\w+['`\w]+[\s,.?!&]+)/g;
 
-      function read() {
-        const text = document.querySelectorAll('#jargonText')[0].value;
-        return text.match(wordsExpression).map(fixSpaces);
+    </div> <!-- .container -->
+
+<script>
+const maxCleanWordsArg = 4;
+const commaChanceArg = 5;
+const wordsExpression = /([\w]+\s[\u2014\-]\s)|([\w]+[\s,.?!&]+)|(\w+\-\w+[\s,.?!&]+)|(\w+['`\w]+[\s,.?!&]+)/g;
+
+  function read() {
+    const text = document.querySelectorAll('#jargonText')[0].value;
+    return text.match(wordsExpression).map(fixSpaces);
+  }
+
+  function speak(text) {
+    console.log(text);
+    return text;
+  }
+
+  function sortWords(words) {
+    let i, word;
+    let capitalized = [];
+    let withComma = [];
+    let withEnding = [];
+    let clean = [];
+
+    for (i = 0; i < words.length; i++) {
+      word = words[i];
+      if (word.charAt(0).match(/[A-Z]/)) {
+        capitalized.push(word.replace(/[^\w\s]/g, ''));
+      } else if (word.charAt(word.length - 2).match(/[,]/)) {
+        withComma.push(word);
+      } else if (word.charAt(word.length - 2).match(/[.?!]/)) {
+        withEnding.push(word);
+      } else {
+        clean.push(word);
+      }
+    }
+
+
+    console.log('Statistics:');
+    console.log(capitalized.length + ' capitalized words');
+    console.log(withComma.length + ' words with comma');
+    console.log(withEnding.length + ' words with period, exclamation or question marks');
+    console.log(clean.length + ' clean words');
+    console.log('');
+    console.log(words.length + ' words total');
+    console.log('-------');
+
+    return {
+      capitalized: capitalized,
+      withComma: withComma,
+      clean: clean,
+      withEnding: withEnding
+    };
+  }
+
+  function generateRandomSentence(sortedWords) {
+    let i;
+    let sentence = '';
+    let shouldContinue = true;
+    sentence += getRandomWordFrom(sortedWords.capitalized);
+    while (shouldContinue) {
+      for (i = Math.ceil(Math.random() * maxCleanWordsArg); i > 0; i--) {
+        sentence += getRandomWordFrom(sortedWords.clean);
       }
 
-      function speak(text) {
-        console.log(text);
-        return text;
+      if (shouldContinue = Math.random() < getCommaChance()) {
+        sentence += getRandomWordFrom(sortedWords.withComma);
       }
+    }
+    sentence += getRandomWordFrom(sortedWords.withEnding);
+    return sentence;
+  }
 
-      function sortWords(words) {
-        let i, word;
-        let capitalized = [];
-        let withComma = [];
-        let withEnding = [];
-        let clean = [];
+  function getRandomWordFrom(words) {
+    return words[Math.floor(Math.random() * words.length)];
+  }
 
-        for (i = 0; i < words.length; i++) {
-          word = words[i];
-          if (word.charAt(0).match(/[A-Z]/)) {
-            capitalized.push(word.replace(/[^\w\s]/g, ''));
-          } else if (word.charAt(word.length - 2).match(/[,]/)) {
-            withComma.push(word);
-          } else if (word.charAt(word.length - 2).match(/[.?!]/)) {
-            withEnding.push(word);
-          } else {
-            clean.push(word);
-          }
-        }
+  function fixSpaces(word) {
+    word = word.replace(/([\s]+)/g, ' ').replace(/([\n]+)/g, '');
+    word = word.charAt(word.length - 1) === ' ' ? word : word + ' ';
+    return word;
+  }
 
+  function getCommaChance() {
+    return (commaChanceArg > 9 ? 9 : commaChanceArg) / 10;
+  }
 
-        console.log('Statistics:');
-        console.log(capitalized.length + ' capitalized words');
-        console.log(withComma.length + ' words with comma');
-        console.log(withEnding.length + ' words with period, exclamation or question marks');
-        console.log(clean.length + ' clean words');
-        console.log('');
-        console.log(words.length + ' words total');
-        console.log('-------');
+  function updateSentence(text) {
+    const sentence = document.querySelectorAll('#sentence')[0];
+    sentence.innerHTML = text;
+  }
 
-        return {
-          capitalized: capitalized,
-          withComma: withComma,
-          clean: clean,
-          withEnding: withEnding
-        };
-      }
+  function init() {
+    Promise.resolve()
+      .then(read)
+      .then(sortWords)
+      .then(generateRandomSentence)
+      .then(speak)
+      .then(updateSentence)
+      .catch(e => console.error(e));
+  }
 
-      function generateRandomSentence(sortedWords) {
-        let i;
-        let sentence = '';
-        let shouldContinue = true;
-        sentence += getRandomWordFrom(sortedWords.capitalized);
-        while (shouldContinue) {
-          for (i = Math.ceil(Math.random() * maxCleanWordsArg); i > 0; i--) {
-            sentence += getRandomWordFrom(sortedWords.clean);
-          }
+  init();
+</script>
 
-          if (shouldContinue = Math.random() < getCommaChance()) {
-            sentence += getRandomWordFrom(sortedWords.withComma);
-          }
-        }
-        sentence += getRandomWordFrom(sortedWords.withEnding);
-        return sentence;
-      }
-
-      function getRandomWordFrom(words) {
-        return words[Math.floor(Math.random() * words.length)];
-      }
-
-      function fixSpaces(word) {
-        word = word.replace(/([\s]+)/g, ' ').replace(/([\n]+)/g, '');
-        word = word.charAt(word.length - 1) === ' ' ? word : word + ' ';
-        return word;
-      }
-
-      function getCommaChance() {
-        return (commaChanceArg > 9 ? 9 : commaChanceArg) / 10;
-      }
-
-      function updateSentence(text) {
-        const sentence = document.querySelectorAll('#sentence')[0];
-        sentence.innerHTML = text;
-      }
-
-      function init() {
-        Promise.resolve()
-          .then(read)
-          .then(sortWords)
-          .then(generateRandomSentence)
-          .then(speak)
-          .then(updateSentence)
-          .catch(e => console.error(e));
-      }
-
-      init();
-    </script>
   </body>
 </html>
