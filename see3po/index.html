@@ -3,7 +3,7 @@
 <head>
     <meta charset=utf-8>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>see3po</title>
+    <title>See-3PO</title>
     <style>
         body {
             margin: 30px;
@@ -63,24 +63,27 @@
 
 <body>
 <header>
-    <h1>img-trace</h1>
+    <h1>See-3PO</h1>
 </header>
 
 <article>
-    <input type="file" id="imageInput" accept="image/*">
-    <div id="drop"><a href="#" id="imageSelect">open an image</a> <br> or drag an image here</div>
-    <div>
-        <a href="#" id="run">open brad.jpg</a>
-        <a href="#" id="save">download</a>
-    </div>
-    <div id="imgdiv"> </div>
-    <div> </div>
-    <div id="svgdiv"> </div>
+    <input type="text" value="" placeholder="http://..." id="imageUrl">
+    <input type="button" value="Analyze" id="btn">
+    <h3 id="info"></h3>
 </article>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
-  console.log($, '>>')
+  var $input = $('#imageUrl')
+
+function clickHandler(e) {
+  var url = 'https://see3po.azurewebsites.net/api/HttpTriggerJS1?url=' + $input.val() + '&code=tempkey'
+  $.get(url, function( data ) {
+    $('#info').html( JSON.stringify(data));
+  });
+}
+
+$('#btn').on('click', clickHandler)
 </script>
 
 </body>
