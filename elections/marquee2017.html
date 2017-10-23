@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marquee test</title>
+</head>
+<body style='background-color:#eee'>
+<h1>Some other Header</h1>
+<iframe id="e2017_marquee" src="http://elex-2017.herokuapp.com/politics/2017-election/remote-marquee" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
+<script>
+  window.addEventListener('message', function(e) {
+    if(e.data[0]==='setHeight') {
+      document.getElementById('e2017_marquee').style.height = e.data[1] + 'px';
+    }
+  }, false);
+</script>
+  <hr>
+  <div>*Known issues:</div>
+  <div>None</div>
+  
+  <h3><a href='https://github.com/bradoyler/bradoyler.github.io/blob/master/elections/marquee.html'>Edit Source</a></h3>
+</body>
+</html>
