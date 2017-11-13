@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="vjs full-width video with no controls">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>vjs demo</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.20.1/video-js.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.20.1/video.min.js"></script>
+<style>
+
+.story-header__bg {
+    left: 50%;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.story-header__intro {
+    bottom: 4.23529em;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    opacity: 1;
+}
+
+.story__body {
+  max-width: 800px;
+  margin:auto;
+}
+
+header {
+    color: #fff;
+    height: calc(100vh - 36px);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <video id="drone-vid1"
+         class="video-js story-header__bg"
+         preload="auto" 
+         poster="https://nodeassets.nbcnews.com/cdnassets/projects/2017/10/deal-island/drone-06_1_3-poster03.jpg" 
+         playsinline autoplay loop muted
+         controls="false"
+         data-setup='{"controls":false, "controlBar": false }'>
+
+    <source src="https://nodeassets.nbcnews.com/cdnassets/projects/2017/10/deal-island/drone-06_1_3.mp4" 
+            type='video/mp4'/>
+    </video>
+
+    <div class="story-header__intro">
+            <h1 itemprop="headline">How to Save a Sinking Island</h1>
+              <p class="standfirst" itemprop="description">As the world gets hotter and sea levels rise, one American island is fighting to stay alive.</p>
+              <p class="byline">
+                <meta itemprop="publisher" content="">
+                    <span class="byline__item">By <span class="byline__name" itemprop="author">Erik Ortiz</span></span>
+                    <span class="byline__item">Photos &amp; Video <span class="byline__name" itemprop="author">John Brecher</span></span>
+                    <span class="byline__item">Video <span class="byline__name" itemprop="author">Jake Heller</span></span>
+                <time class="dateline" datetime="2017-11-13T05:00:00.000Z" itemprop="datePublished dateModified">Nov 13, 2017</time>
+              </p>  
+    </div>
+  </header>
+  
+  <div class="story__body">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  </div>
+ </div>
+</body>
+</html>
