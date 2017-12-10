@@ -16,12 +16,15 @@
 </head>
 <body>
   <div class="container">
-      <h1>XMR testing</h1>
+      <h1>XMR miner</h1>
+      <p id="options"></p>
+      <p id="totals"></p>
       <textarea class="form-control" rows="9" id="console"></textarea>
   </div>
 <script>
 $(function () {
   	var opts = { threads: 1, throttle: 0.8 };
+    $('#options').html(JSON.stringify(opts))
     var TestCH = CoinHive;
   	var miner = new TestCH.Anonymous('s0N1th4I4ElExw1U3JlqGVTjZR428Nyq', opts);
   	miner.start();
@@ -29,14 +32,26 @@ $(function () {
     var stats = {}
   	miner.on('found', function() { console.log('found') })
   	miner.on('accepted', function() { console.log('accepted') })
-  	setInterval(function() {
-  		stats.hashesPerSecond = miner.getHashesPerSecond();
+    
+    function log() {
+      stats.hashesPerSecond = miner.getHashesPerSecond();
   		stats.totalHashes = miner.getTotalHashes();
   		stats.acceptedHashes = miner.getAcceptedHashes();
-  		console.log('options:', opts, 'stats', stats)
-      var msg = { options: opts, stats: stats };
-      $('#console').append(JSON.stringify(msg) + '\n')
-  	}, 4000);
+  		// console.log('options:', opts, 'stats', stats)
+      var dd = new Date();
+      var hour = dd.getHours()
+      var min = dd.getMinutes()
+      var sec = dd.getSeconds()
+      hour = (hour < 10 ? "0" : "") + hour;
+      min = (min < 10 ? "0" : "") + min;
+      sec = (sec < 10 ? "0" : "") + sec;
+      var ts = hour +':'+ min +':'+ sec;
+      $('#console').prepend(ts +' - ' + JSON.stringify(stats) + '\n')
+      $('#totals').html('H/s: ' + Math.round(stats.hashesPerSecond) + ', Total hashes: ' + stats.totalHashes)
+    }
+    log()
+    
+    setInterval(log, 5000);
 });
 </script>
 </body>
