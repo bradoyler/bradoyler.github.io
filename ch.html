@@ -3,28 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://code.jquery.com/jquery.min.js"></script>
   <script src="https://authedmine.com/lib/authedmine.min.js"></script>
-
   <title>CH Test</title>
+  <style media="screen">
+    body {
+        margin: 30px;
+        background-color: #eee;
+    }
+  </style>
 </head>
 <body>
-  <h1>start</h1>
-
+  <div class="container">
+      <h1>XMR testing</h1>
+      <textarea class="form-control" rows="9" id="console"></textarea>
+  </div>
 <script>
-	var opts = { threads: 1, throttle: 0.5 };
-	var miner = new CoinHive.Anonymous('s0N1th4I4ElExw1U3JlqGVTjZR428Nyq', opts);
-	miner.start();
-  
-        var stats = {}
-	miner.on('found', function() { console.log('found') })
-	miner.on('accepted', function() { console.log('accepted') })
-
-	setInterval(function() {
-		stats.hashesPerSecond = miner.getHashesPerSecond();
-		stats.totalHashes = miner.getTotalHashes();
-		stats.acceptedHashes = miner.getAcceptedHashes();
-		console.log('options:', opts, 'stats', stats)
-	}, 4000);
+$(function () {
+  	var opts = { threads: 1, throttle: 0.5 };
+    var TestCH = CoinHive;
+  	var miner = new TestCH.Anonymous('s0N1th4I4ElExw1U3JlqGVTjZR428Nyq', opts);
+  	miner.start();
+    
+    var stats = {}
+  	miner.on('found', function() { console.log('found') })
+  	miner.on('accepted', function() { console.log('accepted') })
+  	setInterval(function() {
+  		stats.hashesPerSecond = miner.getHashesPerSecond();
+  		stats.totalHashes = miner.getTotalHashes();
+  		stats.acceptedHashes = miner.getAcceptedHashes();
+  		console.log('options:', opts, 'stats', stats)
+      var msg = { options: opts, stats: stats };
+      $('#console').append(JSON.stringify(msg) + '\n')
+  	}, 4000);
+});
 </script>
 </body>
 </html>
